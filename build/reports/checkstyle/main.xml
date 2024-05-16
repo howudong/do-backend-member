@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.29">
+<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/member/vo/response/RegionAddressNameVo.java">
+</file>
+<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/member/type/RangeType.java">
+</file>
+<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/member/infrastructure/MemberRegionRepository.java">
+</file>
+<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/member/MemberApplication.java">
+</file>
+<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/member/domain/ActiveMemberRegion.java">
+</file>
+<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/member/domain/MemberRegion.java">
+</file>
+<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/exception/GeneralException.java">
+</file>
+<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/exception/ExceptionAdvice.java">
+</file>
+<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/exception/ExampleHandler.java">
+</file>
+<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/base/dto/ReasonDto.java">
+</file>
+<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/base/dto/ErrorReasonDto.java">
+</file>
+<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/base/ApiResponse.java">
+</file>
+<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/base/BaseCode.java">
+</file>
+<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/base/status/ErrorStatus.java">
+</file>
+<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/base/status/SuccessStatus.java">
+<error line="29" column="13" severity="warning" message="[var-lower-camelcase][avoid-1-char-var] Local variable name &apos;Abc&apos; must match pattern &apos;^[a-z][a-zA-Z0-9][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.LocalVariableNameCheck"/>
+</file>
+<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/base/BaseErrorCode.java">
+</file>
+</checkstyle>
