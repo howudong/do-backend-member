@@ -3,25 +3,29 @@ package hobbiedo.member.application;
 import java.util.List;
 
 import hobbiedo.member.dto.request.RegionDetailDto;
+import hobbiedo.member.dto.response.RegionAddressNameDto;
+import hobbiedo.member.dto.response.RegionGetDetailDto;
+import hobbiedo.member.dto.response.RegionXyDto;
+import hobbiedo.member.vo.request.RegionDetailVo;
 import hobbiedo.member.vo.response.RegionAddressNameVo;
 import hobbiedo.member.vo.response.RegionGetDetailVo;
-import hobbiedo.member.vo.response.RegionXYVO;
+import hobbiedo.member.vo.response.RegionXyVo;
 
 public interface RegionService {
 	void addRegion(RegionDetailDto regionDetailDto, String uuid);
 
-	List<RegionAddressNameVo> getAddressNames(String uuid);
+	List<RegionAddressNameDto> getAddressNames(String uuid);
 
-	RegionGetDetailVo getRegion(Long memberRegionId);
+	RegionGetDetailDto getRegion(Long memberRegionId);
 
-	RegionAddressNameVo getSelectedRegion(String uuid);
+	RegionAddressNameDto getSelectedRegion(String uuid);
 
 	void modifyRegion(Long memberRegionId, RegionDetailDto regionDetailDto);
 
 	void deleteRegion(Long memberRegionId);
 
-	void modifyActiveRegion(Long memberRegionId);
+	void changeActiveRegion(Long memberRegionId, String uuid);
 
-	List<RegionXYVO> getRegionXY(String uuid);
+	List<RegionXyDto> getRegionXY(String uuid);
 
 }

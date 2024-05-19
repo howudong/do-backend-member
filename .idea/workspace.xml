@@ -5,7 +5,81 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c9e8c732-ba94-46f3-9505-220b74796d40" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/8.7/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.7/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.7/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.7/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.7/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.7/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.7/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.7/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.7/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.7/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.7/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.7/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.7/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.7/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.7/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.7/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/hobbiedo/base/ApiResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/hobbiedo/base/BaseCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/hobbiedo/base/BaseErrorCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/hobbiedo/base/dto/ErrorReasonDto$ErrorReasonDtoBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/hobbiedo/base/dto/ErrorReasonDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/hobbiedo/base/dto/ReasonDto$ReasonDtoBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/hobbiedo/base/dto/ReasonDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/hobbiedo/base/status/ErrorStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/hobbiedo/base/status/SuccessStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/hobbiedo/exception/ExampleHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/hobbiedo/exception/ExceptionAdvice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/hobbiedo/exception/GeneralException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/hobbiedo/member/MemberApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/hobbiedo/member/MemberApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/hobbiedo/member/domain/ActiveMemberRegion.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/hobbiedo/member/domain/ActiveMemberRegion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/hobbiedo/member/domain/MemberRegion.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/hobbiedo/member/domain/MemberRegion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/hobbiedo/member/infrastructure/MemberRegionRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/hobbiedo/member/infrastructure/MemberRegionRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/hobbiedo/member/type/RangeType.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/hobbiedo/member/type/RangeType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/hobbiedo/member/vo/response/RegionAddressNameVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/hobbiedo/member/vo/response/RegionAddressNameVo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/member-0.0.1-SNAPSHOT-plain.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/member-0.0.1-SNAPSHOT-plain.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/member-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/member-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/checkstyle/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/checkstyle/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/checkstyle/main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/checkstyle/main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/hobbiedo.member.MemberApplicationTests.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/hobbiedo.member.MemberApplicationTests.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/hobbiedo.member.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/hobbiedo.member.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/application-local.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-hobbiedo.member.MemberApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-hobbiedo.member.MemberApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/bootJar/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/bootJar/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/SuccessStatus.class.uniqueId0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/jar/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/jar/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hobbiedo/base/ApiResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hobbiedo/global/base/ApiResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hobbiedo/base/BaseErrorCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hobbiedo/global/base/BaseErrorCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hobbiedo/base/dto/ReasonErrorDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hobbiedo/global/base/dto/ReasonErrorDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hobbiedo/base/status/ErrorStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hobbiedo/global/base/status/ErrorStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hobbiedo/base/status/SuccessStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hobbiedo/global/base/status/SuccessStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hobbiedo/exception/ExampleHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hobbiedo/global/exception/ExampleHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hobbiedo/exception/ExceptionAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hobbiedo/global/exception/ExceptionAdvice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hobbiedo/exception/GeneralException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hobbiedo/global/exception/GeneralException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hobbiedo/member/MemberApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hobbiedo/member/MemberApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hobbiedo/member/application/RegionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hobbiedo/member/application/RegionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hobbiedo/member/application/RegionServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hobbiedo/member/application/RegionServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hobbiedo/member/domain/ActiveMemberRegion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hobbiedo/member/domain/ActiveMemberRegion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hobbiedo/member/domain/MemberRegion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hobbiedo/member/domain/MemberRegion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hobbiedo/member/dto/request/RegionDetailDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hobbiedo/member/dto/request/RegionDetailDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hobbiedo/member/dto/response/RegionAddressNameDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hobbiedo/member/dto/response/RegionAddressNameDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hobbiedo/member/dto/response/RegionGetDetailDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hobbiedo/member/dto/response/RegionGetDetailDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hobbiedo/member/dto/response/RegionXYDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hobbiedo/member/dto/response/RegionXyDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hobbiedo/member/infrastructure/ActiveMemberRegionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hobbiedo/member/infrastructure/ActiveMemberRegionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hobbiedo/member/infrastructure/MemberRegionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hobbiedo/member/infrastructure/MemberRegionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hobbiedo/member/presentation/RegionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hobbiedo/member/presentation/RegionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hobbiedo/member/type/RangeType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hobbiedo/member/type/RangeType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hobbiedo/member/vo/request/RegionDetailVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hobbiedo/member/vo/request/RegionDetailVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hobbiedo/member/vo/response/RegionAddressNameVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hobbiedo/member/vo/response/RegionAddressNameVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hobbiedo/member/vo/response/RegionGetDetailVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hobbiedo/member/vo/response/RegionGetDetailVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hobbiedo/member/vo/response/RegionXYVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hobbiedo/member/vo/response/RegionXyVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-local.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,12 +145,12 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1715857032" />
+                    <option name="branchName" value="feat/region" />
+                    <option name="lastUsedInstant" value="1715908156" />
                   </RecentBranch>
                   <RecentBranch>
-                    <option name="branchName" value="feat/region" />
-                    <option name="lastUsedInstant" value="1715856084" />
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1715908081" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="develop" />
@@ -107,29 +181,29 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.Build do-backend-member.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.do-backend-member [build].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.MemberApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feat/region&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Build do-backend-member.executor": "Run",
+    "Gradle.do-backend-member [build].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.MemberApplication.executor": "Debug",
+    "git-widget-placeholder": "feat/region",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.sourceCode.Java",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java" />
@@ -146,7 +220,7 @@
       <recent name="hobbiedo.member.domain" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.do-backend-member [build]">
+  <component name="RunManager" selected="Spring Boot.MemberApplication">
     <configuration name="do-backend-member [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -168,19 +242,6 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <RunAsTest>false</RunAsTest>
       <method v="2" />
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="member.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="member.main" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
     </configuration>
     <configuration name="MemberApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
@@ -210,6 +271,7 @@
       <workItem from="1715827294440" duration="6283000" />
       <workItem from="1715843027615" duration="7731000" />
       <workItem from="1715855954609" duration="1617000" />
+      <workItem from="1716020276744" duration="10318000" />
     </task>
     <servers />
   </component>

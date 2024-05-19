@@ -1,8 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="8.29">
+<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/member/dto/response/RegionAddressNameDto.java">
+</file>
+<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/member/dto/response/RegionGetDetailDto.java">
+</file>
+<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/member/dto/response/RegionXyDto.java">
+</file>
+<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/member/dto/request/RegionDetailDto.java">
+</file>
+<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/member/vo/response/RegionXyVo.java">
+</file>
+<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/member/vo/response/RegionGetDetailVo.java">
+</file>
 <file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/member/vo/response/RegionAddressNameVo.java">
 </file>
+<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/member/vo/request/RegionDetailVo.java">
+</file>
 <file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/member/type/RangeType.java">
+</file>
+<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/member/application/RegionService.java">
+</file>
+<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/member/application/RegionServiceImp.java">
+</file>
+<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/member/infrastructure/ActiveMemberRegionRepository.java">
 </file>
 <file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/member/infrastructure/MemberRegionRepository.java">
 </file>
@@ -12,25 +32,26 @@
 </file>
 <file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/member/domain/MemberRegion.java">
 </file>
-<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/exception/GeneralException.java">
+<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/member/presentation/RegionController.java">
 </file>
-<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/exception/ExceptionAdvice.java">
+<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/global/config/CorsMvcConfig.java">
 </file>
-<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/exception/ExampleHandler.java">
+<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/global/config/SwaggerConfig.java">
 </file>
-<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/base/dto/ReasonDto.java">
+<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/global/exception/GeneralException.java">
 </file>
-<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/base/dto/ErrorReasonDto.java">
+<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/global/exception/ExceptionAdvice.java">
 </file>
-<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/base/ApiResponse.java">
+<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/global/exception/ExampleHandler.java">
 </file>
-<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/base/BaseCode.java">
+<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/global/base/dto/ReasonErrorDto.java">
 </file>
-<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/base/status/ErrorStatus.java">
+<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/global/base/ApiResponse.java">
 </file>
-<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/base/status/SuccessStatus.java">
-<error line="29" column="13" severity="warning" message="[var-lower-camelcase][avoid-1-char-var] Local variable name &apos;Abc&apos; must match pattern &apos;^[a-z][a-zA-Z0-9][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.LocalVariableNameCheck"/>
+<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/global/base/status/ErrorStatus.java">
 </file>
-<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/base/BaseErrorCode.java">
+<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/global/base/status/SuccessStatus.java">
+</file>
+<file name="/Users/seonju/Documents/sparos/2nd_project/do-backend-member/src/main/java/hobbiedo/global/base/BaseErrorCode.java">
 </file>
 </checkstyle>
