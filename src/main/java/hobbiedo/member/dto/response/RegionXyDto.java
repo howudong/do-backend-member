@@ -1,7 +1,6 @@
 package hobbiedo.member.dto.response;
 
 import hobbiedo.member.domain.MemberRegion;
-import hobbiedo.member.vo.response.RegionXyVo;
 import lombok.Builder;
 import lombok.Getter;
 
