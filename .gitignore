@@ -37,17 +37,12 @@ out/
 .vscode/
 
 ### property files ###
-# application.yml
-# *.yml
-# src/main/resources/application.yml
 **/application.yml
+**/application-local.yml
+**/application-prod.yml
 
 ### .DS_store ###
 .DS_Store
 ._.DS_Store
 **/.DS_Store
 **/._.DS_Store
-
-#checksytle
-**/naver-checkstyle-rules.xml
-**/naver-checkstyle-suppressions.xml
