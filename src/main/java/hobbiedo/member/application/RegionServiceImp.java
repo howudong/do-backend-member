@@ -3,6 +3,7 @@ package hobbiedo.member.application;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import hobbiedo.global.base.status.ErrorStatus;
 import hobbiedo.global.exception.ExampleHandler;
@@ -14,7 +15,6 @@ import hobbiedo.member.dto.response.RegionGetDetailDto;
 import hobbiedo.member.dto.response.RegionXyDto;
 import hobbiedo.member.infrastructure.ActiveMemberRegionRepository;
 import hobbiedo.member.infrastructure.MemberRegionRepository;
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 
 @Service
@@ -31,6 +31,7 @@ public class RegionServiceImp implements RegionService {
 	}
 
 	@Override
+	@Transactional(readOnly = true)
 	public List<RegionAddressNameDto> getAddressNames(String uuid) {
 		List<MemberRegion> memberRegionList = memberRegionRepository.findByUuid(uuid)
 				.orElseThrow(() -> new ExampleHandler(ErrorStatus.NO_EXIST_MEMBER_REGION));
@@ -40,11 +41,13 @@ public class RegionServiceImp implements RegionService {
 	}
 
 	@Override
+	@Transactional(readOnly = true)
 	public RegionGetDetailDto getRegion(Long memberRegionId) {
 		return RegionGetDetailDto.toRegionGetDetailDto(getMemberRegion(memberRegionId));
 	}
 
 	@Override
+	@Transactional(readOnly = true)
 	public RegionAddressNameDto getSelectedRegion(String uuid) {
 		ActiveMemberRegion activeMemberRegion = activeMemberRegionRepository.findByUuid(uuid)
 				.orElseThrow(() -> new ExampleHandler(ErrorStatus.NO_EXIST_ACTIVE_MEMBER_REGION));
@@ -81,6 +84,7 @@ public class RegionServiceImp implements RegionService {
 	}
 
 	@Override
+	@Transactional(readOnly = true)
 	public List<RegionXyDto> getRegionXY(String uuid) {
 		List<MemberRegion> memberRegionList = memberRegionRepository.findByUuid(uuid)
 				.orElseThrow(() -> new ExampleHandler(ErrorStatus.NO_EXIST_MEMBER_REGION));
@@ -89,7 +93,8 @@ public class RegionServiceImp implements RegionService {
 				.toList();
 	}
 
-	private MemberRegion getMemberRegion(Long memberRegionId) {
+	@Transactional(readOnly = true)
+	protected MemberRegion getMemberRegion(Long memberRegionId) {
 		return memberRegionRepository.findById(memberRegionId)
 				.orElseThrow(() -> new ExampleHandler(ErrorStatus.NO_EXIST_MEMBER_REGION));
 	}
