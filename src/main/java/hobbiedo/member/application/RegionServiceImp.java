@@ -20,6 +20,7 @@ import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
+@Transactional(readOnly = true)
 public class RegionServiceImp implements RegionService {
 
 	private final MemberRegionRepository memberRegionRepository;
@@ -32,36 +33,33 @@ public class RegionServiceImp implements RegionService {
 	}
 
 	@Override
-	@Transactional(readOnly = true)
 	public List<RegionAddressNameDto> getAddressNames(String uuid) {
 		return Optional.of(memberRegionRepository.findByUuid(uuid))
-				.filter(memberRegionList -> !memberRegionList.isEmpty())
-				.orElseThrow(() -> new ExampleHandler(ErrorStatus.NO_EXIST_MEMBER_REGION))
-				.stream()
-				.map(RegionAddressNameDto::toRegionAddressNameDto)
-				.toList();
+			.filter(memberRegionList -> !memberRegionList.isEmpty())
+			.orElseThrow(() -> new ExampleHandler(ErrorStatus.NO_EXIST_MEMBER_REGION))
+			.stream()
+			.map(RegionAddressNameDto::toRegionAddressNameDto)
+			.toList();
 	}
 
 	@Override
-	@Transactional(readOnly = true)
 	public RegionGetDetailDto getRegion(Long memberRegionId) {
 		return RegionGetDetailDto.toRegionGetDetailDto(getMemberRegion(memberRegionId));
 	}
 
 	@Override
-	@Transactional(readOnly = true)
 	public RegionAddressNameDto getSelectedRegion(String uuid) {
 		ActiveMemberRegion activeMemberRegion = activeMemberRegionRepository.findByUuid(uuid)
-				.orElseThrow(() -> new ExampleHandler(ErrorStatus.NO_EXIST_ACTIVE_MEMBER_REGION));
+			.orElseThrow(() -> new ExampleHandler(ErrorStatus.NO_EXIST_ACTIVE_MEMBER_REGION));
 		return RegionAddressNameDto.toRegionAddressNameDto(
-				getMemberRegion(activeMemberRegion.getMemberRegionId()));
+			getMemberRegion(activeMemberRegion.getMemberRegionId()));
 	}
 
 	@Override
 	@Transactional
 	public void modifyRegion(Long memberRegionId, RegionDetailDto regionDetailDto) {
 		memberRegionRepository.save(
-				regionDetailDto.toModifyMemberRegion(getMemberRegion(memberRegionId)));
+			regionDetailDto.toModifyMemberRegion(getMemberRegion(memberRegionId)));
 	}
 
 	@Override
@@ -75,29 +73,28 @@ public class RegionServiceImp implements RegionService {
 	public void changeActiveRegion(Long memberRegionId, String uuid) {
 		// 기존 활성화된 회원 지역 찾기
 		ActiveMemberRegion nowActiveMemberRegion = activeMemberRegionRepository.findByUuid(uuid)
-				.orElseThrow(() -> new ExampleHandler(ErrorStatus.NO_EXIST_ACTIVE_MEMBER_REGION));
+			.orElseThrow(() -> new ExampleHandler(ErrorStatus.NO_EXIST_ACTIVE_MEMBER_REGION));
 		// 활성화된 회원 지역 수정
 		ActiveMemberRegion newActiveMemberRegion = ActiveMemberRegion.builder()
-				.id(nowActiveMemberRegion.getId())
-				.uuid(nowActiveMemberRegion.getUuid())
-				.memberRegionId(memberRegionId)
-				.build();
+			.id(nowActiveMemberRegion.getId())
+			.uuid(nowActiveMemberRegion.getUuid())
+			.memberRegionId(memberRegionId)
+			.build();
 		activeMemberRegionRepository.save(newActiveMemberRegion);
 	}
 
 	@Override
-	@Transactional(readOnly = true)
 	public List<RegionXyDto> getRegionXY(String uuid) {
 		return Optional.of(memberRegionRepository.findByUuid(uuid))
-				.filter(memberRegionList -> !memberRegionList.isEmpty())
-				.orElseThrow(() -> new ExampleHandler(ErrorStatus.NO_EXIST_MEMBER_REGION))
-				.stream()
-				.map(RegionXyDto::toRegionXyDto)
-				.toList();
+			.filter(memberRegionList -> !memberRegionList.isEmpty())
+			.orElseThrow(() -> new ExampleHandler(ErrorStatus.NO_EXIST_MEMBER_REGION))
+			.stream()
+			.map(RegionXyDto::toRegionXyDto)
+			.toList();
 	}
 
 	private MemberRegion getMemberRegion(Long memberRegionId) {
 		return memberRegionRepository.findById(memberRegionId)
-				.orElseThrow(() -> new ExampleHandler(ErrorStatus.NO_EXIST_MEMBER_REGION));
+			.orElseThrow(() -> new ExampleHandler(ErrorStatus.NO_EXIST_MEMBER_REGION));
 	}
 }
