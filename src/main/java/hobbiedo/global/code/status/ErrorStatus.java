@@ -1,9 +1,9 @@
-package hobbiedo.global.base.status;
+package hobbiedo.global.code.status;
 
 import org.springframework.http.HttpStatus;
 
-import hobbiedo.global.base.BaseErrorCode;
-import hobbiedo.global.base.dto.ReasonErrorDto;
+import hobbiedo.global.code.BaseErrorCode;
+import hobbiedo.global.dto.ErrorReasonDto;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public enum ErrorStatus implements BaseErrorCode {
 	VALID_EXCEPTION(HttpStatus.BAD_REQUEST, "GLOBAL400", "데이터베이스 유효성 에러"),
+
 	// REGION 활동지역
 	NO_EXIST_MEMBER_REGION(HttpStatus.BAD_REQUEST, "REGION401", "회원 지역이 존재하지 않습니다."),
 	NO_EXIST_ACTIVE_MEMBER_REGION(HttpStatus.BAD_REQUEST, "REGION402", "활성화된 회원 지역이 존재하지 않습니다."),
@@ -29,13 +30,18 @@ public enum ErrorStatus implements BaseErrorCode {
 	 * 5. API 설계의 일관성: 오류 처리를 통합하여 여러 다른 API에서 일관된 방식으로 오류를 보고하고 싶을 때 유용
 	 */
 	@Override
-	public ReasonErrorDto getReason() {
-		return ReasonErrorDto.builder().code(status).message(message).build();
+	public ErrorReasonDto getReason() {
+		return ErrorReasonDto
+				.builder()
+				.code(status)
+				.message(message)
+				.build();
 	}
 
 	@Override
-	public ReasonErrorDto getReasonHttpStatus() {
-		return ReasonErrorDto.builder()
+	public ErrorReasonDto getReasonHttpStatus() {
+		return ErrorReasonDto
+				.builder()
 				.httpStatus(httpStatus)
 				.code(status)
 				.message(message)

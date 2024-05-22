@@ -1,10 +1,7 @@
 package hobbiedo.member.type;
 
-import java.util.Objects;
-
-import hobbiedo.global.base.status.ErrorStatus;
-import hobbiedo.global.exception.ExampleHandler;
-import hobbiedo.global.exception.GeneralException;
+import hobbiedo.global.code.status.ErrorStatus;
+import hobbiedo.global.exception.handler.ExampleHandler;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
