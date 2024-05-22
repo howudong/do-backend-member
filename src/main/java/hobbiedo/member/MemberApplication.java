@@ -6,9 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.servers.Server;
 
-@OpenAPIDefinition(
-		servers = @Server(url = "http://localhost:8080", description = "Local Test Server URL")
-)
+@OpenAPIDefinition(servers = {
+	@Server(url = "http://localhost:8080", description = "Local Test Server URL"),
+	@Server(url = "https://nukfra.site/", description = "Deployment Test Server URL")})
 @SpringBootApplication
 public class MemberApplication {
 

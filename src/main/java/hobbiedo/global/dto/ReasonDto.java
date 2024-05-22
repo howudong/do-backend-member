@@ -1,4 +1,4 @@
-package hobbiedo.global.base.dto;
+package hobbiedo.global.dto;
 
 import org.springframework.http.HttpStatus;
 
@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ReasonErrorDto {
+public class ReasonDto {
 	private String code;
 	private HttpStatus httpStatus;
 	private String message;

@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import hobbiedo.global.base.ApiResponse;
-import hobbiedo.global.base.status.SuccessStatus;
+import hobbiedo.global.ApiResponse;
+import hobbiedo.global.code.status.SuccessStatus;
 import hobbiedo.member.application.RegionService;
 import hobbiedo.member.dto.request.RegionDetailDto;
 import hobbiedo.member.vo.request.RegionDetailVo;

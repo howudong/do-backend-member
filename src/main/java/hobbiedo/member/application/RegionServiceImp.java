@@ -1,11 +1,13 @@
 package hobbiedo.member.application;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import hobbiedo.global.base.status.ErrorStatus;
-import hobbiedo.global.exception.ExampleHandler;
+import hobbiedo.global.code.status.ErrorStatus;
+import hobbiedo.global.exception.handler.ExampleHandler;
 import hobbiedo.member.domain.ActiveMemberRegion;
 import hobbiedo.member.domain.MemberRegion;
 import hobbiedo.member.dto.request.RegionDetailDto;
@@ -14,11 +16,11 @@ import hobbiedo.member.dto.response.RegionGetDetailDto;
 import hobbiedo.member.dto.response.RegionXyDto;
 import hobbiedo.member.infrastructure.ActiveMemberRegionRepository;
 import hobbiedo.member.infrastructure.MemberRegionRepository;
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
+@Transactional(readOnly = true)
 public class RegionServiceImp implements RegionService {
 
 	private final MemberRegionRepository memberRegionRepository;
@@ -32,11 +34,12 @@ public class RegionServiceImp implements RegionService {
 
 	@Override
 	public List<RegionAddressNameDto> getAddressNames(String uuid) {
-		List<MemberRegion> memberRegionList = memberRegionRepository.findByUuid(uuid)
-				.orElseThrow(() -> new ExampleHandler(ErrorStatus.NO_EXIST_MEMBER_REGION));
-		return memberRegionList.stream()
-				.map(RegionAddressNameDto::toRegionAddressNameDto)
-				.toList();
+		return Optional.of(memberRegionRepository.findByUuid(uuid))
+			.filter(memberRegionList -> !memberRegionList.isEmpty())
+			.orElseThrow(() -> new ExampleHandler(ErrorStatus.NO_EXIST_MEMBER_REGION))
+			.stream()
+			.map(RegionAddressNameDto::toRegionAddressNameDto)
+			.toList();
 	}
 
 	@Override
@@ -47,16 +50,16 @@ public class RegionServiceImp implements RegionService {
 	@Override
 	public RegionAddressNameDto getSelectedRegion(String uuid) {
 		ActiveMemberRegion activeMemberRegion = activeMemberRegionRepository.findByUuid(uuid)
-				.orElseThrow(() -> new ExampleHandler(ErrorStatus.NO_EXIST_ACTIVE_MEMBER_REGION));
+			.orElseThrow(() -> new ExampleHandler(ErrorStatus.NO_EXIST_ACTIVE_MEMBER_REGION));
 		return RegionAddressNameDto.toRegionAddressNameDto(
-				getMemberRegion(activeMemberRegion.getMemberRegionId()));
+			getMemberRegion(activeMemberRegion.getMemberRegionId()));
 	}
 
 	@Override
 	@Transactional
 	public void modifyRegion(Long memberRegionId, RegionDetailDto regionDetailDto) {
 		memberRegionRepository.save(
-				regionDetailDto.toModifyMemberRegion(getMemberRegion(memberRegionId)));
+			regionDetailDto.toModifyMemberRegion(getMemberRegion(memberRegionId)));
 	}
 
 	@Override
@@ -70,27 +73,28 @@ public class RegionServiceImp implements RegionService {
 	public void changeActiveRegion(Long memberRegionId, String uuid) {
 		// 기존 활성화된 회원 지역 찾기
 		ActiveMemberRegion nowActiveMemberRegion = activeMemberRegionRepository.findByUuid(uuid)
-				.orElseThrow(() -> new ExampleHandler(ErrorStatus.NO_EXIST_ACTIVE_MEMBER_REGION));
+			.orElseThrow(() -> new ExampleHandler(ErrorStatus.NO_EXIST_ACTIVE_MEMBER_REGION));
 		// 활성화된 회원 지역 수정
 		ActiveMemberRegion newActiveMemberRegion = ActiveMemberRegion.builder()
-				.id(nowActiveMemberRegion.getId())
-				.uuid(nowActiveMemberRegion.getUuid())
-				.memberRegionId(memberRegionId)
-				.build();
+			.id(nowActiveMemberRegion.getId())
+			.uuid(nowActiveMemberRegion.getUuid())
+			.memberRegionId(memberRegionId)
+			.build();
 		activeMemberRegionRepository.save(newActiveMemberRegion);
 	}
 
 	@Override
 	public List<RegionXyDto> getRegionXY(String uuid) {
-		List<MemberRegion> memberRegionList = memberRegionRepository.findByUuid(uuid)
-				.orElseThrow(() -> new ExampleHandler(ErrorStatus.NO_EXIST_MEMBER_REGION));
-		return memberRegionList.stream()
-				.map(RegionXyDto::toRegionXyDto)
-				.toList();
+		return Optional.of(memberRegionRepository.findByUuid(uuid))
+			.filter(memberRegionList -> !memberRegionList.isEmpty())
+			.orElseThrow(() -> new ExampleHandler(ErrorStatus.NO_EXIST_MEMBER_REGION))
+			.stream()
+			.map(RegionXyDto::toRegionXyDto)
+			.toList();
 	}
 
 	private MemberRegion getMemberRegion(Long memberRegionId) {
 		return memberRegionRepository.findById(memberRegionId)
-				.orElseThrow(() -> new ExampleHandler(ErrorStatus.NO_EXIST_MEMBER_REGION));
+			.orElseThrow(() -> new ExampleHandler(ErrorStatus.NO_EXIST_MEMBER_REGION));
 	}
 }

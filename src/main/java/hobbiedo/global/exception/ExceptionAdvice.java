@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import hobbiedo.global.base.ApiResponse;
-import hobbiedo.global.base.dto.ReasonErrorDto;
-import hobbiedo.global.base.status.ErrorStatus;
+import hobbiedo.global.ApiResponse;
+import hobbiedo.global.code.status.ErrorStatus;
+import hobbiedo.global.dto.ErrorReasonDto;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
 import lombok.extern.slf4j.Slf4j;
@@ -39,7 +39,7 @@ public class ExceptionAdvice extends ResponseEntityExceptionHandler {
 
 	@ExceptionHandler
 	public ResponseEntity<Object> handleCustomException(GeneralException ex, WebRequest request) {
-		ReasonErrorDto errorReasonDto = ex.getErrorReasonHttpStatus();
+		ErrorReasonDto errorReasonDto = ex.getErrorReasonHttpStatus();
 		ApiResponse<Object> body = ApiResponse.onFailure(errorReasonDto.getCode(),
 				errorReasonDto.getMessage(), null);
 		return toResponseEntity(ex, HttpHeaders.EMPTY, request, errorReasonDto.getHttpStatus(),
