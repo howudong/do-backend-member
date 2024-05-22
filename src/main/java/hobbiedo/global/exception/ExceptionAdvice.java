@@ -22,33 +22,44 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ExceptionAdvice extends ResponseEntityExceptionHandler {
 
-	@ExceptionHandler(ConstraintViolationException.class)
-	public ResponseEntity<Object> handleConstraintViolationException(ConstraintViolationException ex,
+	/**
+	 * @return DB 테이블 유효성 대한 검증 에러 응답 처리
+	 */
+	@ExceptionHandler
+	public ResponseEntity<Object> dbValidationException(ConstraintViolationException ex,
 			WebRequest request) {
-		log.info("Handling ConstraintViolationException");
-		String errorMessage = ex.getConstraintViolations().stream()
+		String errorMessage = ex.getConstraintViolations()
+				.stream()
 				.map(ConstraintViolation::getMessage)
 				.findFirst()
-				.orElse("ConstraintViolation extraction error");
+				.orElseThrow(() -> new RuntimeException("ConstrainViolation 추출 오류 발생"));
 
 		return handleExceptionInternalConstraint(ex, errorMessage, HttpHeaders.EMPTY, request);
 	}
 
-	@ExceptionHandler(GeneralException.class)
+	@ExceptionHandler
 	public ResponseEntity<Object> handleCustomException(GeneralException ex, WebRequest request) {
-		log.info("Handling GeneralException: {}", ex.getErrorReasonHttpStatus());
 		ErrorReasonDto errorReasonDto = ex.getErrorReasonHttpStatus();
 		ApiResponse<Object> body = ApiResponse.onFailure(errorReasonDto.getCode(),
 				errorReasonDto.getMessage(), null);
 		return toResponseEntity(ex, HttpHeaders.EMPTY, request, errorReasonDto.getHttpStatus(),
 				body);
 	}
+	//
+	// @ExceptionHandler(value = MethodArgumentNotValidException.class)
+	// public ResponseEntity<Object> handleMethodArgumentNotValid(
+	// 	MethodArgumentNotValidException ex, WebRequest request) {
+	// 	String errorMessage = ex.getBindingResult().getAllErrors().get(0).getDefaultMessage();
+	// 	ApiResponse<Object> body = ApiResponse.onFailure(ex.getStatusCode().toString(), errorMessage,
+	// 		null);
+	// 	return toResponseEntity(ex, HttpHeaders.EMPTY, request, HttpStatus.BAD_REQUEST, body);
+	// }
 
 	@Override
 	protected ResponseEntity<Object> handleMethodArgumentNotValid(
-			MethodArgumentNotValidException ex, HttpHeaders headers,
-			HttpStatusCode status, WebRequest request) {
-		log.info("Handling MethodArgumentNotValidException");
+			MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatusCode status,
+			WebRequest request) {
+		log.info("ResponseEntity = {}", status);
 		ObjectError objectError = ex.getBindingResult().getAllErrors().get(0);
 
 		ApiResponse<Object> body = ApiResponse.onFailure(objectError.getCode(),
@@ -57,8 +68,13 @@ public class ExceptionAdvice extends ResponseEntityExceptionHandler {
 		return toResponseEntity(ex, HttpHeaders.EMPTY, request, HttpStatus.BAD_REQUEST, body);
 	}
 
+	/**
+	 * @return @Valid 검증에 대한 에러 응답 처리
+	 */
+
 	private ResponseEntity<Object> handleExceptionInternalConstraint(Exception ex,
 			String errorMessage, HttpHeaders headers, WebRequest request) {
+
 		ApiResponse<Object> body = ApiResponse.onFailure(ErrorStatus.VALID_EXCEPTION.getStatus(),
 				errorMessage, null);
 
@@ -67,9 +83,7 @@ public class ExceptionAdvice extends ResponseEntityExceptionHandler {
 	}
 
 	private ResponseEntity<Object> toResponseEntity(Exception ex, HttpHeaders headers,
-			WebRequest request,
-			HttpStatus httpStatus, ApiResponse<Object> body) {
-		log.error("Exception handled: {}", ex.getMessage());
+			WebRequest request, HttpStatus httpStatus, ApiResponse<Object> body) {
 		return super.handleExceptionInternal(ex, body, headers, httpStatus, request);
 	}
 }
