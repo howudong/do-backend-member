@@ -18,7 +18,9 @@ public enum SuccessStatus implements BaseCode {
 	UPDATE_REGION(HttpStatus.OK, "REGION200", "활동 지역 수정 성공하였습니다."),
 	DELETE_REGION(HttpStatus.OK, "REGION200", "활동 지역 삭제 성공하였습니다."),
 	CHANGE_ACTIVE_REGION(HttpStatus.OK, "REGION200", "기본 활동 지역 변경에 성공하였습니다."),
-	FIND_REGION_XY(HttpStatus.OK, "REGION200", "소모임 생성 시, 활동 지역 목록 조회에 성공하였습니다.");
+	FIND_REGION_XY(HttpStatus.OK, "REGION200", "소모임 생성 시, 활동 지역 목록 조회에 성공하였습니다."),
+
+	INTEGRATE_SIGN_UP_SUCCESS(HttpStatus.OK, "MEMBER200", "통합 로그인에 성공했습니다");
 
 	private final HttpStatus httpStatus;
 	private final String status;
