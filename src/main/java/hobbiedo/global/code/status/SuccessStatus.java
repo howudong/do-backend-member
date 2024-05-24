@@ -20,7 +20,9 @@ public enum SuccessStatus implements BaseCode {
 	CHANGE_ACTIVE_REGION(HttpStatus.OK, "REGION200", "기본 활동 지역 변경에 성공하였습니다."),
 	FIND_REGION_XY(HttpStatus.OK, "REGION200", "소모임 생성 시, 활동 지역 목록 조회에 성공하였습니다."),
 
-	INTEGRATE_SIGN_UP_SUCCESS(HttpStatus.OK, "MEMBER200", "통합 로그인에 성공했습니다");
+	INTEGRATE_SIGN_UP_SUCCESS(HttpStatus.OK, "MEMBER200", "통합 로그인에 성공했습니다"),
+	CAN_NOT_USE_LOGIN_ID(HttpStatus.OK, "MEMBER201", "이미 존재하는 아이디입니다."),
+	CAN_USE_LOGIN_ID(HttpStatus.OK, "MEMBER202", "사용할 수 있는 아이디입니다.");
 
 	private final HttpStatus httpStatus;
 	private final String status;
@@ -37,19 +39,19 @@ public enum SuccessStatus implements BaseCode {
 	@Override
 	public ReasonDto getReason() {
 		return ReasonDto
-				.builder()
-				.code(status)
-				.message(message)
-				.build();
+			.builder()
+			.code(status)
+			.message(message)
+			.build();
 	}
 
 	@Override
 	public ReasonDto getReasonHttpStatus() {
 		return ReasonDto
-				.builder()
-				.httpStatus(httpStatus)
-				.code(status)
-				.message(message)
-				.build();
+			.builder()
+			.httpStatus(httpStatus)
+			.code(status)
+			.message(message)
+			.build();
 	}
 }
