@@ -22,9 +22,9 @@ import lombok.extern.slf4j.Slf4j;
 public class EmailService {
 	public static final int EMAIL_CODE_DIGIT = 4;
 	public static final String EMAIL_HTLM_FORMAT = """
-		   <h3> [취미한다] 이메일 인증 코드입니다. </h3>
-		   <h1> %s </h1>
-		   <h3> 서비스를 이용해주셔서 감사합니다!! </h3>
+		<h3> [취미한다] 이메일 인증 코드입니다. </h3>
+		<h1> %s </h1>
+		<h3> 서비스를 이용해주셔서 감사합니다!! </h3>
 		""";
 
 	private final JavaMailSender javaMailSender;
