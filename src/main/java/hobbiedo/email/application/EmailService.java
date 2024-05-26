@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import hobbiedo.email.domain.EmailCode;
 import hobbiedo.email.dto.request.EmailAuthDTO;
+import hobbiedo.email.dto.request.EmailCheckDTO;
 import hobbiedo.email.infrastructure.EmailRepository;
 import hobbiedo.email.util.CodeGeneratorUtil;
 import jakarta.mail.MessagingException;
@@ -43,12 +44,13 @@ public class EmailService {
 		replaceNewCodeToRedis(emailAuthDTO.getEmail(), authCode);
 	}
 
-	public Boolean checkAuthCode(String email, String authCode) {
-		EmailCode emailCode = emailRepository.findByEmail(email)
+	public Boolean checkAuthCode(EmailCheckDTO emailCheckDTO) {
+		EmailCode emailCode = emailRepository
+			.findByEmail(emailCheckDTO.getEmail())
 			.orElseThrow(NoSuchElementException::new);
 
 		return emailCode.getAuthCode()
-			.equals(authCode);
+			.equals(emailCheckDTO.getAuthCode());
 	}
 
 	private void replaceNewCodeToRedis(String email, String authCode) {
