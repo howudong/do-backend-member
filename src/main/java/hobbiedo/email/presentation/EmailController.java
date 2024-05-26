@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import hobbiedo.email.application.EmailService;
 import hobbiedo.email.converter.EmailAuthConverter;
+import hobbiedo.email.converter.EmailCheckConverter;
 import hobbiedo.email.vo.request.EmailAuthVO;
 import hobbiedo.email.vo.request.EmailCheckVO;
 import hobbiedo.global.ApiResponse;
@@ -37,10 +38,8 @@ public class EmailController {
 	@GetMapping("/email/check")
 	@Operation(summary = "이메일 인증 코드 일치 확인",
 		description = "인증 코드가 일치하는지 확인합니다.")
-	public ApiResponse<Boolean> checkEmailCode(
-		@RequestParam(value = "email") String email,
-		@RequestParam(value = "authCode") String authCode) {
-		Boolean isMatch = emailService.checkAuthCode(email, authCode);
+	public ApiResponse<Boolean> checkEmailCode(@RequestBody EmailCheckVO emailCheckVO) {
+		Boolean isMatch = emailService.checkAuthCode(EmailCheckConverter.toDTO(emailCheckVO));
 		return ApiResponse.onSuccess(
 			isMatch ? SuccessStatus.EMAIL_AUTH_MATCH :
 				SuccessStatus.EMAIL_AUTH_NOT_MATCH,
