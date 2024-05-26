@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import hobbiedo.email.domain.EmailCode;
+import hobbiedo.email.dto.request.EmailAuthDTO;
 import hobbiedo.email.infrastructure.EmailRepository;
 import hobbiedo.email.util.CodeGeneratorUtil;
 import jakarta.mail.MessagingException;
@@ -34,12 +35,12 @@ public class EmailService {
 	private String senderEmail;
 
 	@Transactional
-	public void sendAuthCode(String email) {
+	public void sendAuthCode(EmailAuthDTO emailAuthDTO) {
 		String authCode = CodeGeneratorUtil.generate(EMAIL_CODE_DIGIT);
-		MimeMessage mail = createMail(email, authCode);
+		MimeMessage mail = createMail(emailAuthDTO.getEmail(), authCode);
 
 		javaMailSender.send(mail);
-		replaceNewCodeToRedis(email, authCode);
+		replaceNewCodeToRedis(emailAuthDTO.getEmail(), authCode);
 	}
 
 	public Boolean checkAuthCode(String email, String authCode) {
