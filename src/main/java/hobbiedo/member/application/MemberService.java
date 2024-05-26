@@ -10,6 +10,7 @@ import hobbiedo.member.domain.IntegrateAuth;
 import hobbiedo.member.domain.Member;
 import hobbiedo.member.dto.request.IntegrateSignUpDTO;
 import hobbiedo.member.infrastructure.MemberRepository;
+import hobbiedo.member.vo.response.ExistIdVO;
 import lombok.RequiredArgsConstructor;
 
 @Service
