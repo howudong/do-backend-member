@@ -55,9 +55,7 @@ dependencies {
 ext {
     set('springCloudVersion', "2023.0.1")
 }
-test {
-    systemProperty 'spring.profiles.active', project.findProperty('profile') ?: 'default'
-}
+
 dependencyManagement {
     imports {
         mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
