@@ -46,14 +46,9 @@ public class MemberController {
 		@RequestParam("loginId")
 		@Pattern(regexp = LOGIN_ID_PATTERN,
 			message = "아이디는 8~20자리의 영어+숫자로만 이뤄져야합니다.(특수 문자x)") String loginId) {
-
-		ExistIdVO isExist = memberService.isExist(loginId);
-
 		return ApiResponse.onSuccess(
-			isExist.getIsPossible()
-				? SuccessStatus.CAN_USE_LOGIN_ID :
-				SuccessStatus.CAN_NOT_USE_LOGIN_ID,
-			isExist
+			SuccessStatus.CAN_USE_LOGIN_ID,
+			memberService.isDuplicated(loginId)
 		);
 	}
 }
