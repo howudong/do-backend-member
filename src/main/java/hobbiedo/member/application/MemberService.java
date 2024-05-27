@@ -37,7 +37,7 @@ public class MemberService {
 			.member(newMember)
 			.build());
 	}
-
+	
 	public ExistIdVO isExist(String loginId) {
 		Boolean isExist = memberRepository.existsByLoginId(loginId);
 		return ExistIdVO.builder()
