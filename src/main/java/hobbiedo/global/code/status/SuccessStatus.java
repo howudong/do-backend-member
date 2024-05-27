@@ -23,7 +23,9 @@ public enum SuccessStatus implements BaseCode {
 	INTEGRATE_SIGN_UP_SUCCESS(HttpStatus.OK, "MEMBER200", "통합 로그인에 성공했습니다"),
 	SEND_AUTH_MAIL_SUCCESS(HttpStatus.OK, "MEMBER205", "이메일 인증 코드 전송에 성공했습니다"),
 	EMAIL_AUTH_MATCH(HttpStatus.OK, "MEMBER206", "이메일 인증 코드가 일치합니다."),
-	EMAIL_AUTH_NOT_MATCH(HttpStatus.OK, "MEMBER207", "이메일 인증 코드가 일치하지 않습니다");
+	EMAIL_AUTH_NOT_MATCH(HttpStatus.OK, "MEMBER207", "이메일 인증 코드가 일치하지 않습니다"),
+	CAN_NOT_USE_LOGIN_ID(HttpStatus.OK, "MEMBER201", "이미 존재하는 아이디입니다."),
+	CAN_USE_LOGIN_ID(HttpStatus.OK, "MEMBER202", "사용할 수 있는 아이디입니다.");
 
 	private final HttpStatus httpStatus;
 	private final String status;
