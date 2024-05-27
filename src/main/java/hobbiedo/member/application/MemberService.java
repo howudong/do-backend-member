@@ -24,8 +24,8 @@ public class MemberService {
 
 	@Transactional
 	public SignUpVO integrateSignUp(IntegrateSignUpDTO integrateSignUpDTO) {
+		validate(integrateSignUpDTO);
 		Member newMember = SignUpConverter.toEntity(integrateSignUpDTO);
-
 		memberRepository.save(IntegrateAuth.builder()
 			.loginId(integrateSignUpDTO.getLoginId())
 			.password(passwordEncoder.encode(integrateSignUpDTO.getPassword()))
@@ -39,11 +39,20 @@ public class MemberService {
 
 	public CheckLoginIdVO isDuplicated(String loginId) {
 		if (memberRepository.existsByLoginId(loginId)) {
-			throw new MemberExceptionHandler(ErrorStatus.NOT_USE_LOGIN_ID);
+			throw new MemberExceptionHandler(ErrorStatus.ALREADY_USE_LOGIN_ID);
 		}
 
 		return CheckLoginIdVO.builder()
 			.isPossible(true)
 			.build();
+	}
+
+	private void validate(IntegrateSignUpDTO integrateSignUpDTO) {
+		if (memberRepository.existsByMember_Email(integrateSignUpDTO.getEmail())) {
+			throw new MemberExceptionHandler(ErrorStatus.ALREADY_USE_EMAIL);
+		}
+		if (memberRepository.existsByMember_PhoneNumber(integrateSignUpDTO.getPhoneNumber())) {
+			throw new MemberExceptionHandler(ErrorStatus.ALREADY_USE_PHONE_NUMBER);
+		}
 	}
 }
