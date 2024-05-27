@@ -17,7 +17,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("/v1")
+@RequestMapping("v1/non-users")
 @RequiredArgsConstructor
 @Tag(name = "Email", description = "이메일 인증 관련 서비스입니다.")
 public class EmailController {
