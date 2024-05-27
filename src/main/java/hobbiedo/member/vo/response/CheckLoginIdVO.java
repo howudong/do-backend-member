@@ -9,7 +9,7 @@ import lombok.Getter;
 @Getter
 @Builder
 @Schema(description = "아이디 중복 검사 반환값(VO)")
-public class ExistIdVO {
+public class CheckLoginIdVO {
 	@Schema(description = "사용 가능 유무")
 	@JsonProperty("isPossible")
 	private Boolean isPossible;
