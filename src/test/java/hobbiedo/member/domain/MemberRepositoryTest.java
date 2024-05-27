@@ -33,7 +33,7 @@ class MemberRepositoryTest {
 
 	ResultActions startAPI(String email, String name, String phoneNumber,
 		GenderType gender, LocalDate birth, String loginId, String password) throws Exception {
-		return mockMvc.perform(post("/v1/sign-up/integration")
+		return mockMvc.perform(post("/v1/non-users/sign-up")
 			.contentType(MediaType.APPLICATION_JSON)
 			.content(objectMapper.writeValueAsString(
 				createMember(email, name, phoneNumber, gender, birth, loginId, password))
@@ -59,7 +59,7 @@ class MemberRepositoryTest {
 	@DisplayName("이름에 숫자가 포함된다면  예외를 발생시킨다.")
 	void 이름_예외_테스트() throws Exception {
 		ResultActions resultActions = startAPI("tjdvy963@naver.com", "asd1", "01010101",
-			GenderType.MALE, LocalDate.now(), "tjdvy953", "wnsvy19503!!");
+				GenderType.MALE, LocalDate.now(), "tjdvy953", "wnsvy19503!!");
 
 		resultActions.andExpect(status().isBadRequest());
 	}
@@ -69,7 +69,7 @@ class MemberRepositoryTest {
 	void 이메일_예외_테스트() throws Exception {
 
 		ResultActions resultActions = startAPI("tjdvy963naver.com", "asd1", "01092312316",
-			GenderType.MALE, LocalDate.now(), "tjdvy953", "wnsvy19503!!");
+				GenderType.MALE, LocalDate.now(), "tjdvy953", "wnsvy19503!!");
 
 		resultActions.andExpect(status().isBadRequest());
 	}
@@ -78,7 +78,7 @@ class MemberRepositoryTest {
 	@DisplayName("값이 정상이라면 성공한다.")
 	void 값_인증_성공_테스트() throws Exception {
 		ResultActions resultActions = startAPI("tjdvy953@naver.com", "홍준표", "01092312316",
-			GenderType.MALE, LocalDate.now(), "tjdvy953", "wnsvy19503!!");
+				GenderType.MALE, LocalDate.now(), "tjdvy953", "wnsvy19503!!");
 
 		resultActions.andExpect(status().isOk());
 	}
