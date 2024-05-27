@@ -6,6 +6,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import hobbiedo.global.code.status.ErrorStatus;
+import hobbiedo.global.exception.handler.MemberExceptionHandler;
 import hobbiedo.member.domain.IntegrateAuth;
 import hobbiedo.member.domain.Member;
 import hobbiedo.member.dto.request.IntegrateSignUpDTO;
@@ -37,11 +39,14 @@ public class MemberService {
 			.member(newMember)
 			.build());
 	}
-	
-	public ExistIdVO isExist(String loginId) {
-		Boolean isExist = memberRepository.existsByLoginId(loginId);
+
+	public ExistIdVO isDuplicated(String loginId) {
+		if (memberRepository.existsByLoginId(loginId)) {
+			throw new MemberExceptionHandler(ErrorStatus.NOT_USE_LOGIN_ID);
+		}
+
 		return ExistIdVO.builder()
-			.isPossible(!isExist)
+			.isPossible(true)
 			.build();
 	}
 }
