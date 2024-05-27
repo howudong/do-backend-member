@@ -16,7 +16,9 @@ public enum ErrorStatus implements BaseErrorCode {
 	NO_EXIST_MEMBER_REGION(HttpStatus.BAD_REQUEST, "REGION401", "회원 지역이 존재하지 않습니다."),
 	NO_EXIST_ACTIVE_MEMBER_REGION(HttpStatus.BAD_REQUEST, "REGION402", "활성화된 회원 지역이 존재하지 않습니다."),
 	NO_EXIST_RANGE_TYPE(HttpStatus.BAD_REQUEST, "REGION403", "활동 지역 범위 단위(3,5,7,10)에 맞지 않습니다."),
-	NOT_USE_LOGIN_ID(HttpStatus.BAD_REQUEST, "MEMBER401", "사용할 수 없는 아이디입니다.");
+	ALREADY_USE_LOGIN_ID(HttpStatus.BAD_REQUEST, "MEMBER401", "이미 사용 중인 아이디입니다."),
+	ALREADY_USE_EMAIL(HttpStatus.BAD_REQUEST, "MEMBER402", "이미 사용 중인 이메일입니다."),
+	ALREADY_USE_PHONE_NUMBER(HttpStatus.BAD_REQUEST, "MEMBER403", "이미 사용 중인 전화번호입니다.");
 
 	private final HttpStatus httpStatus;
 	private final String status;
