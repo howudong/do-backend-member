@@ -1,16 +1,18 @@
 package hobbiedo.member.application;
 
-import java.util.UUID;
-
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import hobbiedo.global.code.status.ErrorStatus;
+import hobbiedo.global.exception.handler.MemberExceptionHandler;
+import hobbiedo.member.converter.SignUpConverter;
 import hobbiedo.member.domain.IntegrateAuth;
 import hobbiedo.member.domain.Member;
 import hobbiedo.member.dto.request.IntegrateSignUpDTO;
 import hobbiedo.member.infrastructure.MemberRepository;
-import hobbiedo.member.vo.response.ExistIdVO;
+import hobbiedo.member.vo.response.CheckLoginIdVO;
+import hobbiedo.member.vo.response.SignUpVO;
 import lombok.RequiredArgsConstructor;
 
 @Service
@@ -21,27 +23,36 @@ public class MemberService {
 	private final BCryptPasswordEncoder passwordEncoder;
 
 	@Transactional
-	public void integrateSignUp(IntegrateSignUpDTO integrateSignUpDTO) {
-		Member newMember = Member.builder()
-			.phoneNumber(integrateSignUpDTO.getPhoneNumber())
-			.name(integrateSignUpDTO.getName())
-			.uuid(UUID.randomUUID().toString())
-			.email(integrateSignUpDTO.getEmail())
-			.gender(integrateSignUpDTO.getGender())
-			.birth(integrateSignUpDTO.getBirth())
-			.build();
-
+	public SignUpVO integrateSignUp(IntegrateSignUpDTO integrateSignUpDTO) {
+		validate(integrateSignUpDTO);
+		Member newMember = SignUpConverter.toEntity(integrateSignUpDTO);
 		memberRepository.save(IntegrateAuth.builder()
 			.loginId(integrateSignUpDTO.getLoginId())
 			.password(passwordEncoder.encode(integrateSignUpDTO.getPassword()))
 			.member(newMember)
 			.build());
-	}
-	
-	public ExistIdVO isExist(String loginId) {
-		Boolean isExist = memberRepository.existsByLoginId(loginId);
-		return ExistIdVO.builder()
-			.isPossible(!isExist)
+
+		return SignUpVO.builder()
+			.uuid(newMember.getUuid())
 			.build();
+	}
+
+	public CheckLoginIdVO isDuplicated(String loginId) {
+		if (memberRepository.existsByLoginId(loginId)) {
+			throw new MemberExceptionHandler(ErrorStatus.ALREADY_USE_LOGIN_ID);
+		}
+
+		return CheckLoginIdVO.builder()
+			.isPossible(true)
+			.build();
+	}
+
+	private void validate(IntegrateSignUpDTO integrateSignUpDTO) {
+		if (memberRepository.existsByMember_Email(integrateSignUpDTO.getEmail())) {
+			throw new MemberExceptionHandler(ErrorStatus.ALREADY_USE_EMAIL);
+		}
+		if (memberRepository.existsByMember_PhoneNumber(integrateSignUpDTO.getPhoneNumber())) {
+			throw new MemberExceptionHandler(ErrorStatus.ALREADY_USE_PHONE_NUMBER);
+		}
 	}
 }

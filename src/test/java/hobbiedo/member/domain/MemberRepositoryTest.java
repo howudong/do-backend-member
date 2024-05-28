@@ -33,7 +33,7 @@ class MemberRepositoryTest {
 
 	ResultActions startAPI(String email, String name, String phoneNumber,
 		GenderType gender, LocalDate birth, String loginId, String password) throws Exception {
-		return mockMvc.perform(post("/v1/sign-up/integration")
+		return mockMvc.perform(post("/v1/non-users/sign-up")
 			.contentType(MediaType.APPLICATION_JSON)
 			.content(objectMapper.writeValueAsString(
 				createMember(email, name, phoneNumber, gender, birth, loginId, password))
