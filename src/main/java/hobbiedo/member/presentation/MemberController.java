@@ -15,6 +15,7 @@ import hobbiedo.member.application.MemberService;
 import hobbiedo.member.converter.FindLoginIdConverter;
 import hobbiedo.member.converter.FindPasswordConverter;
 import hobbiedo.member.converter.SignUpConverter;
+import hobbiedo.member.dto.request.FindPasswordDTO;
 import hobbiedo.member.vo.request.FindLoginIdVO;
 import hobbiedo.member.vo.request.FindPasswordVO;
 import hobbiedo.member.vo.request.IntegrateSignUpVO;
@@ -33,11 +34,14 @@ public class MemberController {
 
 	private final MemberService memberService;
 	private final EmailService idEmailService;
+	private final EmailService passwordEmailService;
 
 	public MemberController(MemberService memberService,
-		@Qualifier(value = "idEmailService") EmailService idEmailService) {
+		@Qualifier(value = "idEmailService") EmailService idEmailService,
+		@Qualifier(value = "passwordEmailService") EmailService passwordEmailService) {
 		this.memberService = memberService;
 		this.idEmailService = idEmailService;
+		this.passwordEmailService = passwordEmailService;
 	}
 
 	@PostMapping("/sign-up")
@@ -77,15 +81,16 @@ public class MemberController {
 	}
 
 	@PostMapping("/user-password")
-	@Operation(summary = "회원 비밀번호 찾기 전 검증",
-		description = "회원 비밀번호 찾기 전, 이름,이메일,아이디를 통해 검증합니다.")
+	@Operation(summary = "회원 비밀번호 찾기(임시 비밀번호 발급)",
+		description = "회원의 이름,이메일,아이디를 검증하여 임시 비밀번호를 발급합니다.")
 	public ApiResponse<Void> findPasswordApi(
 		@RequestBody FindPasswordVO findPasswordVO) {
-
-		memberService.findPassword(FindPasswordConverter.toDTO(findPasswordVO));
+		FindPasswordDTO findPasswordDTO = FindPasswordConverter.toDTO(findPasswordVO);
+		memberService.findPassword(findPasswordDTO);
+		passwordEmailService.sendMail(findPasswordDTO);
 
 		return ApiResponse.onSuccess(
-			SuccessStatus.FIND_LOGIN_ID_SUCCESS,
+			SuccessStatus.FIND_PASSWORD_SUCCESS,
 			null
 		);
 	}

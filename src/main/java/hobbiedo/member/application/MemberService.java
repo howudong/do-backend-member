@@ -9,6 +9,7 @@ import hobbiedo.global.exception.handler.MemberExceptionHandler;
 import hobbiedo.member.converter.SignUpConverter;
 import hobbiedo.member.domain.IntegrateAuth;
 import hobbiedo.member.domain.Member;
+import hobbiedo.member.dto.request.FindPasswordDTO;
 import hobbiedo.member.dto.request.IntegrateSignUpDTO;
 import hobbiedo.member.infrastructure.MemberRepository;
 import hobbiedo.member.vo.response.CheckLoginIdVO;
@@ -45,6 +46,16 @@ public class MemberService {
 		return CheckLoginIdVO.builder()
 			.isPossible(true)
 			.build();
+	}
+
+	public void findPassword(FindPasswordDTO findPasswordDTO) {
+		Boolean isExist = memberRepository.existPasswordBy(
+			findPasswordDTO.getName(),
+			findPasswordDTO.getEmail(),
+			findPasswordDTO.getLoginId());
+		if (!isExist) {
+			throw new MemberExceptionHandler(ErrorStatus.FIND_PASSWORD_FAIL);
+		}
 	}
 
 	private void validate(IntegrateSignUpDTO integrateSignUpDTO) {
