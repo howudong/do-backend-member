@@ -1,4 +1,4 @@
-package hobbiedo.email.domain;
+package hobbiedo.email.domain.entity;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
