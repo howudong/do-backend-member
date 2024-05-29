@@ -20,11 +20,12 @@ public enum SuccessStatus implements BaseCode {
 	CHANGE_ACTIVE_REGION(HttpStatus.OK, "REGION200", "기본 활동 지역 변경에 성공하였습니다."),
 	FIND_REGION_XY(HttpStatus.OK, "REGION200", "소모임 생성 시, 활동 지역 목록 조회에 성공하였습니다."),
 
-	INTEGRATE_SIGN_UP_SUCCESS(HttpStatus.OK, "MEMBER200", "통합 로그인에 성공했습니다"),
-	SEND_AUTH_MAIL_SUCCESS(HttpStatus.OK, "MEMBER205", "이메일 인증 코드 전송에 성공했습니다"),
-	EMAIL_AUTH_MATCH(HttpStatus.OK, "MEMBER206", "이메일 인증 코드가 일치합니다."),
-	EMAIL_AUTH_NOT_MATCH(HttpStatus.OK, "MEMBER207", "이메일 인증 코드가 일치하지 않습니다"),
-	CAN_USE_LOGIN_ID(HttpStatus.OK, "MEMBER200", "사용할 수 있는 아이디입니다.");
+	INTEGRATE_SIGN_UP_SUCCESS(HttpStatus.OK, "MEMBER200", "통합 회원가입에 성공했습니다"),
+	CAN_USE_LOGIN_ID(HttpStatus.OK, "MEMBER200", "사용할 수 있는 아이디입니다."),
+	UPDATE_PASSWORD_SUCCESS(HttpStatus.OK, "MEMBER200", "임시 비밀번호를 이메일로 전송했습니다."),
+	FIND_LOGIN_ID_SUCCESS(HttpStatus.OK, "MEMBER200", "회원 아이디를 이메일로 전송했습니다."),
+	SEND_AUTH_MAIL_SUCCESS(HttpStatus.OK, "MEMBER200", "이메일 인증 코드 전송에 성공했습니다"),
+	EMAIL_AUTH_MATCH(HttpStatus.OK, "MEMBER200", "이메일 인증 코드가 일치합니다.");
 
 	private final HttpStatus httpStatus;
 	private final String status;

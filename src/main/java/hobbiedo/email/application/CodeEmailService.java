@@ -14,10 +14,10 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@Service
+@Service(value = "codeEmailService")
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
-public class EmailCodeService implements EmailService {
+public class CodeEmailService implements EmailService {
 	public static final int EMAIL_CODE_DIGIT = 4;
 	private static final String DIGIT_SET_FORMAT = "%%0%dd";
 
@@ -27,21 +27,20 @@ public class EmailCodeService implements EmailService {
 	@Override
 	@Transactional
 	public void sendMail(Object object) {
-		EmailAuthDTO emailAuthDTO = getEmailAuthDTO(object);
-		String emailCode = generate();
-		mailFormatter.createMail(emailAuthDTO.getEmail(), MailType.EMAIL_CODE, emailCode);
+		EmailAuthDTO emailAuthDTO = getDTO(object);
+		String emailCode = generateCode();
+		mailFormatter.sendMail(emailAuthDTO.getEmail(), MailType.EMAIL_CODE, emailCode);
 		replaceNewCodeToRedis(emailAuthDTO.getEmail(), emailCode);
 	}
 
-	@Override
-	public String generate() {
+	private String generateCode() {
 		Random random = new Random();
 		int code = random.nextInt((int)Math.pow(10, EMAIL_CODE_DIGIT));
 		String format = String.format(DIGIT_SET_FORMAT, EMAIL_CODE_DIGIT);
 		return String.format(format, code);
 	}
 
-	private EmailAuthDTO getEmailAuthDTO(Object object) {
+	private EmailAuthDTO getDTO(Object object) {
 		EmailAuthDTO emailAuthDTO = null;
 		if (object instanceof EmailAuthDTO) {
 			emailAuthDTO = (EmailAuthDTO)object;

@@ -17,7 +17,7 @@ public class MailFormatter {
 	@Value("${spring.mail.username}")
 	private String senderEmail;
 
-	public void createMail(String receiver, MailType mailType, String message) {
+	public void sendMail(String receiver, MailType mailType, String message) {
 		MimeMessage email = javaMailSender.createMimeMessage();
 
 		String title = mailType.subject;

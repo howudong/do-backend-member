@@ -1,7 +1,5 @@
 package hobbiedo.email.application;
 
-import hobbiedo.email.domain.SendMessage;
-
-public interface EmailService extends SendMessage {
+public interface EmailService {
 	void sendMail(Object object);
 }
