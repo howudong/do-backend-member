@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Schema(description = "비밀번호 찾기 요청 VO")
-public class FindPasswordVO {
+public class ResetPasswordVO {
 	@Schema(description = "회원 아이디")
 	private String name;
 	@Schema(description = "회원 이메일")

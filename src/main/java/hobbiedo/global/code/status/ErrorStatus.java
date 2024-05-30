@@ -17,7 +17,7 @@ public enum ErrorStatus implements BaseErrorCode {
 	NO_EXIST_ACTIVE_MEMBER_REGION(HttpStatus.BAD_REQUEST, "REGION402", "활성화된 회원 지역이 존재하지 않습니다."),
 	NO_EXIST_RANGE_TYPE(HttpStatus.BAD_REQUEST, "REGION403", "활동 지역 범위 단위(3,5,7,10)에 맞지 않습니다."),
 	FIND_LOGIN_ID_FAIL(HttpStatus.BAD_REQUEST, "MEMBER406", "회원 아이디 찾기에 실패했습니다"),
-	FIND_PASSWORD_FAIL(HttpStatus.BAD_REQUEST, "MEMBER407", "회원 비밀번호 찾기에 실패했습니다"),
+	RESET_PASSWORD_FAIL(HttpStatus.BAD_REQUEST, "MEMBER407", "회원 비밀번호 찾기에 실패했습니다"),
 	EMAIL_AUTH_NOT_MATCH(HttpStatus.OK, "MEMBER405", "이메일 인증 코드가 일치하지 않습니다"),
 	ALREADY_USE_LOGIN_ID(HttpStatus.BAD_REQUEST, "MEMBER401", "이미 사용 중인 아이디입니다."),
 	ALREADY_USE_EMAIL(HttpStatus.BAD_REQUEST, "MEMBER402", "이미 사용 중인 이메일입니다."),

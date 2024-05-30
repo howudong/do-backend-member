@@ -13,12 +13,12 @@ import hobbiedo.global.ApiResponse;
 import hobbiedo.global.code.status.SuccessStatus;
 import hobbiedo.member.application.MemberService;
 import hobbiedo.member.converter.FindLoginIdConverter;
-import hobbiedo.member.converter.FindPasswordConverter;
+import hobbiedo.member.converter.ResetPasswordConverter;
 import hobbiedo.member.converter.SignUpConverter;
-import hobbiedo.member.dto.request.FindPasswordDTO;
+import hobbiedo.member.dto.response.ResetPasswordDTO;
 import hobbiedo.member.vo.request.FindLoginIdVO;
-import hobbiedo.member.vo.request.FindPasswordVO;
 import hobbiedo.member.vo.request.IntegrateSignUpVO;
+import hobbiedo.member.vo.request.ResetPasswordVO;
 import hobbiedo.member.vo.response.CheckLoginIdVO;
 import hobbiedo.member.vo.response.SignUpVO;
 import io.swagger.v3.oas.annotations.Operation;
@@ -83,14 +83,13 @@ public class MemberController {
 	@PostMapping("/user-password")
 	@Operation(summary = "회원 비밀번호 찾기(임시 비밀번호 발급)",
 		description = "회원의 이름,이메일,아이디를 검증하여 임시 비밀번호를 발급합니다.")
-	public ApiResponse<Void> findPasswordApi(
-		@RequestBody FindPasswordVO findPasswordVO) {
-		FindPasswordDTO findPasswordDTO = FindPasswordConverter.toDTO(findPasswordVO);
-		memberService.findPassword(findPasswordDTO);
-		passwordEmailService.sendMail(findPasswordDTO);
+	public ApiResponse<Void> resetPasswordApi(
+		@RequestBody ResetPasswordVO resetPasswordVO) {
+		ResetPasswordDTO resetPasswordDTO = memberService.resetPassword(ResetPasswordConverter.toDTO(resetPasswordVO));
+		passwordEmailService.sendMail(resetPasswordDTO);
 
 		return ApiResponse.onSuccess(
-			SuccessStatus.FIND_PASSWORD_SUCCESS,
+			SuccessStatus.RESET_PASSWORD_SUCCESS,
 			null
 		);
 	}

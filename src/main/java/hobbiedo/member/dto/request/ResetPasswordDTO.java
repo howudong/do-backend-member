@@ -8,7 +8,7 @@ import lombok.Getter;
 @Getter
 @Builder
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class FindPasswordDTO {
+public class ResetPasswordDTO {
 	private String name;
 	private String email;
 	private String loginId;
